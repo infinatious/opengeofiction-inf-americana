@@ -791,6 +791,37 @@ export function loadShields() {
     },
   };
 
+  // - OPENGEOFICTION
+  // NORTH ARCHANTA
+  // Lutang
+
+  // Temporarily duplicated while waiting for vector tiles to be
+  // rerendered, the 2023-09-19 tiles still use Lutang Trunks as the
+  // network
+  shields["Lutang Trunks"] = {
+    spriteBlank: "shield_lutang_n",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.white,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 5,
+      bottom: 2,
+    },
+  };
+
+  shields["Lutang:N"] = {
+    spriteBlank: "shield_lutang_n",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.white,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 5,
+      bottom: 2,
+    },
+  };
+
   // NORTH AMERICA
 
   // Canada
