@@ -1,4 +1,5 @@
-# OpenStreetMap Americana
+# OpenGeofiction Americana
+OpenGeofiction Americana is the Lemurian version of OpenStreetMap Americana, modified and adapted to OpenGeofiction, a map of a fictional world built on OSM's technology.
 
 _A quintessentially American map style_ [🗺 View the map](https://zelonewolf.github.io/openstreetmap-americana/)
 
@@ -67,15 +68,12 @@ The OpenStreetMap Americana style is built upon the [OpenMapTiles schema](https:
 The legend’s “Route markers” section is labeled using labels of Wikidata items that are tagged with the [corresponding OSM tag](https://www.wikidata.org/wiki/Property:P1282).
 
 ## Coverage
+Americana is compatible with vector tiles covering the entire world. However, there are still issues that need to be worked out such as "Japan" boundaries showing up in Izaland.
 
-Americana is compatible with vector tiles covering the entire world.
+Americana provides custom shields for the OGF world's roads, particularly Lutang roads. For shields to show up, you must:
+1. Provide Lemuria an image of your road shields.
+2. Have route relations defined for your roads.
 
-Americana displays custom route shields for routes in all U.S. states and territories, and for routes in the following countries:
-
-<img src="doc-img/shield_map_world.svg" width="500" alt="Countries">
-
-We are hoping that it will support more countries; you can [help us](https://github.com/ZeLonewolf/openstreetmap-americana/projects/1)!
 
 ## Tile Server
-
-Although the source code in this repository is dedicated to the public domain under a CC0 waiver, it is configured by default to load map tiles from a privately-donated community [tile server](https://tile.ourmap.us). This server is available for use by other hobbyist and community projects with constraints. See the [tile server usage policy](TILE_USAGE.md) for more details. This usage policy describes the allowable usage of the tiles for other projects, separate from this style or the application being developed in this repository.
+Infinatious, one of OGF's community members, has used their home server to render the entire OGF planet into vector tiles. Updates occur every week or two since mbtiles are CPU-intensive during the rendering process.
