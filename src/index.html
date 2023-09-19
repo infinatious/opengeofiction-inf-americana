@@ -32,6 +32,14 @@
         margin-left: 70px !important;
       }
 
+      #top-right-info {
+          border: 0;
+          z-index: 100;
+          float: right;
+          margin: 10px;
+          background-color: transparent;
+      }
+
       #legend-container {
         max-height: 60vh;
         overflow-y: scroll;
@@ -98,22 +106,19 @@
   <body>
     <div id="map"></div>
     <div id="attribution-logo"></div>
-    <a href="https://github.com/ZeLonewolf/openstreetmap-americana/"
-      ><img
-        loading="lazy"
-        width="149"
-        height="149"
-        src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png?resize=149%2C149"
-        alt="Fork me on GitHub"
+    <div id="top-right-info">
+      <img loading="lazy"
+        src="Lemuria_wordmark.svg"
+        height="20px"
         style="
           position: absolute;
           top: 0;
           right: 0;
-          border: 0;
-          z-index: 100;
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-        "
-    /></a>
+          margin:12px;
+          background: white;
+          padding: 8px;
+          border: 1px solid black;">
+    </div>
     <template id="legend">
       <h2>Legend</h2>
       <div id="legend-container"></div>

@@ -26,7 +26,7 @@ const buildWith = async (
   await mkdir("dist", { recursive: true });
 
   await Promise.all(
-    ["index.html", "shieldtest.html", "favicon.ico"].map((f) =>
+    ["index.html", "shieldtest.html", "favicon.ico", "Lemuria_wordmark.svg"].map((f) =>
       copyFile(`src/${f}`, `dist/${f}`)
     )
   );
