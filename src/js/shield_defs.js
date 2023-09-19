@@ -799,7 +799,7 @@ export function loadShields() {
   // rerendered, the 2023-09-19 tiles still use Lutang Trunks as the
   // network
   shields["Lutang Trunks"] = {
-    spriteBlank: "ogf/shield_lutang_n",
+    spriteBlank: "shield_lutang_n",
     textLayout: textConstraint("ellipse"),
     textColor: Color.shields.white,
     padding: {
@@ -811,7 +811,7 @@ export function loadShields() {
   };
 
   shields["Lutang:N"] = {
-    spriteBlank: "ogf/shield_lutang_n",
+    spriteBlank: "shield_lutang_n",
     textLayout: textConstraint("ellipse"),
     textColor: Color.shields.white,
     padding: {
