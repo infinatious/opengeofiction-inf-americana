@@ -49,6 +49,7 @@ let networks = [
 
   // Basic Angular Shapes
   // Basic Rounded Shapes
+  "Lutang:WS",
   // Fancy Rectangles
   // Detailed Shapes
   "Lutang:E"
