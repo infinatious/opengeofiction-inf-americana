@@ -822,6 +822,12 @@ export function loadShields() {
     },
   };
 
+  shields["Lutang:E"] = hexagonHorizontalShield(
+    30,
+    Color.shields.yellow,
+    Color.shields.black
+  );
+
   return {
     networks: shields,
     options: {
