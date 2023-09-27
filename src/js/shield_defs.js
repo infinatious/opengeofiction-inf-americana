@@ -838,6 +838,18 @@ export function loadShields() {
       top: 1,
       bottom: 4,
     },
+  };
+
+  shields['Lutang:KT'] = {
+    spriteBlank: "shield_lutang_kt",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.black,
+    padding: {
+      left: 1,
+      right: 10,
+      top: 10,
+      bottom: 1,
+    },
   }
 
   return {

@@ -52,7 +52,8 @@ let networks = [
   "Lutang:WS",
   // Fancy Rectangles
   // Detailed Shapes
-  "Lutang:E"
+  "Lutang:E",
+  "Lutang:KT"
   // With banners
 ];
 
