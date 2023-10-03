@@ -1,6 +1,7 @@
 "use strict";
 
 import { getDOMPixelRatio } from "@americana/maplibre-shield-generator";
+import { shieldNetworks } from "./shield_network_defs.js";
 import * as Label from "../constants/label.js";
 
 import * as HighwayShieldLayers from "../layer/highway_shield.js";
@@ -631,9 +632,9 @@ export default class LegendControl {
 
     let descriptionCell = row.querySelector(".description");
 
-    let link = document.createElement("a");
-    link.href = binding.network.value;
-    link.target = "_blank";
+    let link = document.createElement("span");
+    //link.href = binding.network.value;
+    //link.target = "_blank";
     let locale = binding.networkLabel["xml:lang"];
     link.textContent = toSentenceCase(binding.networkLabel.value, locale);
     if (locale) {
@@ -729,11 +730,11 @@ export default class LegendControl {
       return this._networkMetadata;
     }
 
-    let url = `https://query.wikidata.org/sparql?query=${encodeURIComponent(
-      this.getNetworkMetadataQuery()
-    )}&format=json`;
-    const response = await fetch(url);
-    const json = await response.json();
+    // let url = `https://query.wikidata.org/sparql?query=${encodeURIComponent(
+    //   this.getNetworkMetadataQuery()
+    // )}&format=json`;
+    // const response = await fetch(url);
+    const json = shieldNetworks();
     this._networkMetadata = Object.fromEntries(
       json.results.bindings.map((binding) => {
         return [binding.value.value, binding];

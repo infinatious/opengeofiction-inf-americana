@@ -35,7 +35,7 @@ export const sections = [
   {
     id: "shields",
     name: "Route markers",
-    source: "Wikidata",
+    //source: "Wikidata",
   },
   {
     name: "Railroads",
