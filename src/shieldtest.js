@@ -54,7 +54,8 @@ let networks = [
   // Fancy Rectangles
   // Detailed Shapes
   "Lutang:E",
-  "Lutang:KT"
+  "Lutang:KT",
+  "FSA:FS",
   // With banners
 ];
 

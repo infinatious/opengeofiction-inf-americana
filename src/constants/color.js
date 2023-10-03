@@ -57,6 +57,7 @@ export const shields = {
   white: palette.white,
   yellow: palette.yellow, // Pantone 116
   yellow_green: palette.yellow_green, // Pantone 382
+  fsa_fs: "#880000", // FSA text color
 };
 
 export const railwayTunnelFill = "hsl(0, 0%, 90%)";

@@ -864,6 +864,21 @@ export function loadShields() {
     },
   }
 
+  // SOUTH ARCHANTA
+  // Federal States of Archanta
+  // Federal States Motorway Network
+  shields["FSA:FS"] = {
+    spriteBlank: "shield_fsa_fs",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.fsa_fs,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 2,
+      bottom: 2,
+    },
+  };
+
   return {
     networks: shields,
     options: {
