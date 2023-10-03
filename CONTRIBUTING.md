@@ -402,6 +402,36 @@ For consistency, POI icons use the following color palette:
 | Transport              | Pantone 234 C   | $`{\color{#a20067} \blacksquare}`$ Mauve             | 162 0 103   | #a20067     |
 | Knockout               |                 | $`{\color{#f9f5f0} \blacksquare}`$ Lt Grayish Orange | 249 245 240 | #f9f5f0     |
 
+## Add your shields to the map
+Do you want your country's road shields on the map?
+
+### Network naming scheme
+The network naming scheme is `<country>:<prefix>`. For example, Lutang's expressways are signed E*n* (e.g E1, E2), so `Lutang:E` is used. FSA motorways use the tag `FSA:FS`.
+
+### Routes
+OGF Americana relies on route relations to draw shields.
+
+These are the only important tags:
+```
+type=route
+route=road
+network=<NETWORK>
+ref=<REF>
+```
+
+* `ref` is what is written on the road sign; in most cases this is purely numeric.
+* `network` is the network name assigned to you based on the network naming scheme.
+
+Examples:
+* I-88 in Illinois: https://www.openstreetmap.org/relation/185409
+* N85 in Matas, Lutang: https://opengeofiction.net/relation/387382
+* FS-1 in Michisaukee, FSA: https://opengeofiction.net/relation/387380
+
+### How to add
+If you know GitHub, you can file a pull request. If you don't, simply get in touch
+with Lemuria in the OGFC Discord server, and he will help you with the process. And
+then you just wait for Infinatious to update the tiles (happens every 7-8 days).
+
 ## Fonts
 
 Fonts for style labels are packaged and defined in [fontstack66](https://github.com/osm-americana/fontstack66), Americana's font package.
