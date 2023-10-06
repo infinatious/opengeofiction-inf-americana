@@ -879,6 +879,13 @@ export function loadShields() {
     },
   };
 
+  // Tempache
+  shields["FSA:TM"] = homePlateDownShield(
+    5,
+    Color.shields.white,
+    Color.shields.black
+  );
+
   return {
     networks: shields,
     options: {

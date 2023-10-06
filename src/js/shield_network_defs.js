@@ -10,7 +10,8 @@ export function shieldNetworks() {
         { "id": "Lutang:WS", "name": "Lutang: West Sundin" },
         { "id": "Lutang:KT", "name": "Lutang: Katumangan" },
         { "id": "Lutang:HU", "name": "Lutang: Huntsman" },
-        { "id": "FSA:FS", "name": "FSA Motorways"}
+        { "id": "FSA:FS", "name": "FSA Motorways" },
+        { "id": "FSA:TM", "name": "FSA: Tempache"}
     ];
 
     let processedNetworks = {
