@@ -39,6 +39,12 @@ export function build(locales) {
     lyrPark.woodFill,
     lyrAeroway.fill,
 
+    lyrLanduse.residential,
+    lyrLanduse.retail,
+    lyrLanduse.industrial,
+    lyrLanduse.school,
+    lyrLanduse.sports,
+
     lyrBoundary.countyCasing,
     lyrBoundary.stateCasing,
     lyrBoundary.countryCasing,

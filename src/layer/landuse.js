@@ -34,4 +34,116 @@ export const legendEntries = [
   },
 ];
 
+export const residential = {
+  "id": "landuse-residential",
+  "type": "fill",
+  "source": "openmaptiles",
+  "source-layer": "landuse",
+  "filter": [
+    "all",
+    [
+      "in",
+      "class",
+      "residential",
+      "suburb",
+      "neighbourhood"
+    ]
+  ],
+  "layout": {"visibility": "visible"},
+  "paint": {
+    "fill-color": {
+      "base": 1,
+      "stops": [
+        [12, "hsla(30, 19%, 90%, 0.4)"],
+        [16, "hsla(30, 19%, 90%, 0.2)"]
+      ]
+    }
+  }
+}
 
+
+export const industrial = {
+  "id": "landuse-industrial",
+  "type": "fill",
+  "source": "openmaptiles",
+  "source-layer": "landuse",
+  "filter": [
+    "all",
+    ["==", "$type", "Polygon"],
+    [
+      "in",
+      "class",
+      "industrial",
+      "garages",
+      "dam"
+    ]
+  ],
+  "layout": {"visibility": "visible"},
+  "paint": {
+    "fill-color": "rgba(224, 210, 243, 0.34)"
+  }
+}
+
+export const retail = {
+    "id": "landuse-retail",
+    "type": "fill",
+    "source": "openmaptiles",
+    "source-layer": "landuse",
+    "filter": [
+      "all",
+      ["==", "$type", "Polygon"],
+      ["in", "class", "retail"]
+    ],
+    "layout": {"visibility": "visible"},
+    "paint": {
+      "fill-color": "rgba(247, 221, 240, 0.34)"
+    }
+  }
+
+export const school = {
+    "id": "landuse-school",
+    "type": "fill",
+    "source": "openmaptiles",
+    "source-layer": "landuse",
+    "filter": [
+      "all",
+      [
+        "in",
+        "class",
+        "school",
+        "education",
+        "college",
+        "university"
+      ]
+    ],
+    "paint": {
+      "fill-color": "rgba(248, 248, 232, 1)"
+    }
+  }
+
+export const sports = {
+  "id": "landuse-sports",
+"type": "fill",
+"metadata": {
+  "mapbox:group": "1444849388993.3071"
+},
+"source": "openmaptiles",
+"source-layer": "landuse",
+"filter": [
+  "all",
+  [
+    "in",
+    "class",
+    "stadium",
+    "pitch",
+    "track",
+    "stadium"
+  ]
+],
+"layout": {"visibility": "visible"},
+"paint": {
+  "fill-color": "rgba(203, 243, 219, 1)",
+  "fill-opacity": 0.7,
+  "fill-outline-color": "rgba(6, 143, 60, 1)"
+}
+}

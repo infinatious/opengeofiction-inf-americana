@@ -321,8 +321,8 @@ const highwayFillColor = [
       ],
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 70%, 69%)`,
-        `hsl(${roadHue}, 70%, 69%)`,
+        `hsl(${tollRoadHue}, 73%, 81%)`,
+        `hsl(${roadHue}, 73%, 81%)`,
       ],
     ],
     [
@@ -634,8 +634,8 @@ class Motorway extends Road {
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 77%, 50%)`,
-        `hsl(${roadHue}, 77%, 50%)`,
+        `hsl(${tollRoadHue}, 98%, 78%)`,
+        `hsl(${roadHue}, 69%, 60%)`,
       ],
     ];
     this.casingColor = [

@@ -13,8 +13,11 @@ export const building = {
       16,
       `hsl(0, 0%, 80%)`,
     ],
-    "fill-extrusion-height": 3,
-    "fill-extrusion-opacity": 0.85,
+    "fill-extrusion-height": {
+      "property": "render_height",
+      "type": "identity"
+    },
+    "fill-extrusion-opacity": 0.95,
   },
   layout: {
     visibility: "visible",
