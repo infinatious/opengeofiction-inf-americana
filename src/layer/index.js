@@ -32,9 +32,12 @@ export function build(locales) {
   layers.push(
     lyrBackground.base,
     lyrLanduse.urbanizedArea,
-    lyrPark.fill,
-    lyrAeroway.fill,
     lyrPark.parkFill,
+    lyrPark.fill,
+    lyrPark.sandFill,
+    lyrPark.grassFill,
+    lyrPark.woodFill,
+    lyrAeroway.fill,
 
     lyrBoundary.countyCasing,
     lyrBoundary.stateCasing,

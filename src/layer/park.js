@@ -71,3 +71,36 @@ export const legendEntries = [
     layers: [fill.id, outline.id, parkFill.id, parkOutline.id],
   },
 ];
+
+export const sandFill = {
+  id: "sand_fill",
+  type: "fill",
+  paint: {
+    "fill-color": Color.sandFill
+  },
+  source: "openmaptiles",
+  filter: ["==", ["get", "class"], "sand"],
+  "source-layer": "landcover",
+};
+
+export const grassFill = {
+  id: "grass_fill",
+  type: "fill",
+  paint: {
+    "fill-color": Color.grassFill
+  },
+  source: "openmaptiles",
+  filter: ["==", ["get", "class"], "grass"],
+  "source-layer": "landcover",
+};
+
+export const woodFill = {
+  id: "wood_fill",
+  type: "fill",
+  paint: {
+    "fill-color": Color.woodFill
+  },
+  source: "openmaptiles",
+  filter: ["==", ["get", "class"], "wood"],
+  "source-layer": "landcover",
+};

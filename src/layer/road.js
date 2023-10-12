@@ -17,8 +17,8 @@ const minZoomSmallService = 15;
 //Exponent base for inter-zoom interpolation
 const roadExp = 1.2;
 
-const roadHue = 0;
-const tollRoadHue = 48;
+const roadHue = 40;
+const tollRoadHue = 50;
 const buswayHue = 322;
 
 //Tunnel casing dash pattern
@@ -321,8 +321,8 @@ const highwayFillColor = [
       ],
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 77%, 50%)`,
-        `hsl(${roadHue}, 77%, 50%)`,
+        `hsl(${tollRoadHue}, 70%, 69%)`,
+        `hsl(${roadHue}, 70%, 69%)`,
       ],
     ],
     [
@@ -339,13 +339,13 @@ const roadSurfaceColor = [
   [
     ...tollSelector,
     `hsl(${tollRoadHue}, 50%, 70%)`,
-    `hsl(${roadHue}, 50%, 70%)`,
+    `hsl(${roadHue}, 95%, 80%)`,
   ],
   "trunk",
   [
     ...tollSelector,
     `hsl(${tollRoadHue}, 95%, 80%)`,
-    `hsl(${roadHue}, 95%, 80%)`,
+    `hsl(${roadHue}, 50%, 70%)`,
   ],
   [
     ...tollSelector,
@@ -616,26 +616,26 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 70%, 76%)`,
-        `hsl(${roadHue}, 70%, 76%)`,
+        `hsl(${tollRoadHue}, 90%, 84%)`,
+        `hsl(${roadHue}, 90%, 84%)`,
       ],
       6,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 70%, 66%)`,
-        `hsl(${roadHue}, 70%, 66%)`,
+        `hsl(${tollRoadHue}, 90%, 81%)`,
+        `hsl(${roadHue}, 90%, 81%)`,
       ],
       minzoomBrunnel - 0.5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 70%, 60%)`,
-        `hsl(${roadHue}, 70%, 60%)`,
+        `hsl(${tollRoadHue}, 92%, 79%)`,
+        `hsl(${roadHue}, 92%, 79%)`,
       ],
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 71%, 45%)`,
-        `hsl(${roadHue}, 71%, 35%)`,
+        `hsl(${tollRoadHue}, 77%, 50%)`,
+        `hsl(${roadHue}, 77%, 50%)`,
       ],
     ];
     this.casingColor = [
@@ -691,20 +691,20 @@ class Trunk extends Road {
       5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 77%, 50%)`,
-        `hsl(${roadHue}, 77%, 50%)`,
+        `hsl(${tollRoadHue}, 57%, 90%)`,
+        `hsl(${roadHue}, 57%, 90%)`,
       ],
       9,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 77%, 50%)`,
-        `hsl(${roadHue}, 77%, 50%)`,
+        `hsl(${tollRoadHue}, 57%, 87%)`,
+        `hsl(${roadHue}, 57%, 87%)`,
       ],
       15,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 70%, 18%)`,
-        `hsl(${roadHue}, 70%, 18%)`,
+        `hsl(${tollRoadHue}, 55%, 18%)`,
+        `hsl(${roadHue}, 55%, 18%)`,
       ],
     ];
   }

@@ -780,19 +780,24 @@ export function loadShields() {
 
   // Default
 
-  shields["default"] = {
-    textColor: Color.shields.black,
-    textHaloColor: Color.backgroundFill,
-    padding: {
-      left: 3,
-      right: 3,
-      top: 3,
-      bottom: 3,
-    },
-  };
+  shields["default"] = roundedRectShield(
+    Color.shields.white,
+    Color.shields.black
+  );
 
-  // - OPENGEOFICTION
-  // NORTH ARCHANTA
+//  shields["default"] = {
+//    textColor: Color.shields.black,
+//    textHaloColor: Color.backgroundFill,
+//    padding: {
+//      left: 3,
+//      right: 3,
+//      top: 3,
+//      bottom: 3,
+//    },
+//  };
+//
+// - OPENGEOFICTION
+// NORTH ARCHANTA
   // Lutang
 
   // Temporarily duplicated while waiting for vector tiles to be
@@ -885,6 +890,33 @@ export function loadShields() {
     Color.shields.white,
     Color.shields.black
   );
+
+  // Sierra
+  shields["FSA:S"] = diamondShield(
+    Color.shields.black,
+    Color.shields.white,
+    Color.shields.white,
+    2,
+    24
+  );
+
+  // Other states temporary
+  shields["FSA:CL"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:RP"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:Z"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:WA"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:TA"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:CL"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:TN"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:WI"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:WM"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:AL"] = pillShield(Color.shields.white, Color.shields.black);
+
+  // RTC
+  shields["FSA:RTC"] = {
+    spriteBlank: "shield_fsa_rtc",
+    notext: true,
+  };
 
   return {
     networks: shields,
