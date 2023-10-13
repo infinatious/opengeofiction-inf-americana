@@ -17,7 +17,7 @@ const minZoomSmallService = 15;
 //Exponent base for inter-zoom interpolation
 const roadExp = 1.2;
 
-const roadHue = 40;
+const roadHue = 34;
 const tollRoadHue = 50;
 const buswayHue = 322;
 
@@ -322,7 +322,7 @@ const highwayFillColor = [
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 73%, 81%)`,
-        `hsl(${roadHue}, 73%, 81%)`,
+        `hsl(${roadHue}, 100%, 83%)`,
       ],
     ],
     [
@@ -635,7 +635,7 @@ class Motorway extends Road {
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 98%, 78%)`,
-        `hsl(${roadHue}, 69%, 60%)`,
+        `hsl(${roadHue}, 100%, 77%)`,
       ],
     ];
     this.casingColor = [

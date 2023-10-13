@@ -900,7 +900,41 @@ export function loadShields() {
     24
   );
 
-  // Other states temporary
+  //Apawiland
+  shields["FSA:AW"] = diamondShield(
+    "hsl(359, 43%, 19%)",
+    "hsl(45, 89%, 63%)",
+    "hsl(45, 89%, 63%)",
+    2,
+    24
+  );
+
+
+  // Mennowa
+  shields["FSA:ME"] = {
+    spriteBlank: "shield_fsa_me",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.black,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 2,
+      bottom: 2,
+    },
+  };
+  shields["FSA:M"] = {
+    spriteBlank: "shield_fsa_me",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.black,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 2,
+      bottom: 2,
+    },
+  };
+
+  // Other states as circles for now
   shields["FSA:CL"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:RP"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:Z"] = pillShield(Color.shields.white, Color.shields.black);
@@ -911,6 +945,7 @@ export function loadShields() {
   shields["FSA:WI"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WM"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:AL"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:AC"] = pillShield(Color.shields.white, Color.shields.black);
 
   // RTC
   shields["FSA:RTC"] = {

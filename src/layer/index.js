@@ -213,8 +213,8 @@ export function build(locales) {
     lyrAerialway.liftCasing,
     lyrAerialway.lift,
 
-    lyrBoundary.countryLabelLeft,
-    lyrBoundary.countryLabelRight,
+    //lyrBoundary.countryLabelLeft,
+    //lyrBoundary.countryLabelRight,
     lyrWater.waterwayLabel,
 
     lyrTransportationLabel.bridgeSpacer,
