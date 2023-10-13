@@ -131,6 +131,10 @@ export function build(locales) {
 
     lyrRoad.road.surface(),
 
+    lyrRoad.path,
+    lyrRoad.bridgePathCasing,
+    lyrRoad.bridgePath,
+
     lyrRail.rail.dashes(),
     lyrRail.railService.dashes(),
 
@@ -232,12 +236,14 @@ export function build(locales) {
     lyrAeroway.minorAirportLabel,
     lyrAeroway.airportGate,
 
+    lyrHighwayShield.ref,
     lyrHighwayShield.shield,
 
     lyrHighwayExit.exits,
 
     lyrPoi.poi,
 
+    lyrPlace.placeOther,
     lyrPlace.state,
     lyrPlace.village,
     lyrPlace.town,

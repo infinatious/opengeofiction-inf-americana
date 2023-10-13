@@ -197,7 +197,7 @@ export const city = {
   },
   source: "openmaptiles",
   minzoom: 4,
-  maxzoom: 12,
+  maxzoom: 14,
   "source-layer": "place",
   metadata: {},
 };
@@ -221,7 +221,7 @@ export const state = {
   },
   filter: ["==", ["get", "class"], "state"],
   layout: {
-    "text-font": ["Americana-Regular"],
+    "text-font": ["Americana-Bold"],
     "text-size": {
       base: 1.2,
       stops: [
@@ -452,3 +452,37 @@ export const legendEntries = [
     filter: ["==", ["get", "capital"], 4],
   },
 ];
+
+export const placeOther = {
+  "id": "place-other",
+  "type": "symbol",
+  "source": "openmaptiles",
+  "source-layer": "place",
+  "minzoom": 5,
+  "filter": [
+    "!in",
+    "class",
+    "city",
+    "town",
+    "village",
+    "country",
+    "continent"
+  ],
+  "layout": {
+    "text-field": Label.localizedName,
+    "text-font": ["Americana-Bold"],
+    "text-letter-spacing": 0.1,
+    "text-max-width": 9,
+    "text-size": {
+      "base": 1.2,
+      "stops": [[12, 10], [15, 14]]
+    },
+    "text-transform": "uppercase",
+    "visibility": "visible"
+  },
+  "paint": {
+    "text-color": "#633",
+    "text-halo-color": "rgba(255,255,255,0.8)",
+    "text-halo-width": 1.2
+  }
+}

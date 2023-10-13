@@ -121,3 +121,44 @@ export const shield = {
     ["has", "route_6"],
   ],
 };
+
+//For routes with no route tags
+export const ref = {
+  "id": "highway-ref",
+  "type": "symbol",
+  "source": "openmaptiles",
+  "source-layer": "transportation_name",
+  "minzoom": 8,
+  "filter": [
+    "all",
+    ["<=", "ref_length", 6],
+    ["==", "$type", "LineString"],
+    ["!has", "route_1"]
+  ],
+  "layout": {
+    "icon-image": "road_{ref_length}",
+    "icon-rotation-alignment": "viewport",
+    "icon-size": 1,
+    "symbol-placement": {
+      "base": 1,
+      "stops": [
+        [10, "point"],
+        [11, "line"]
+      ]
+    },
+    "symbol-spacing": 200,
+    "text-field": "{ref}",
+    "text-font": ["Americana-Bold"],
+    "text-rotation-alignment": "viewport",
+    "text-size": 10,
+    "icon-text-fit": "both",
+    "icon-text-fit-padding": [
+      2,
+      4,
+      2,
+      4
+    ],
+    "icon-offset": [0, -3]
+  },
+  "paint": {}
+}

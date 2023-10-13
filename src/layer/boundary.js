@@ -86,7 +86,7 @@ export const stateCasing = {
       base: 1.2,
       stops: [
         [3, `hsl(${Color.hueBorderCasing - 30}, 25%, 94%)`],
-        [7, `hsl(${Color.hueBorderCasing}, 30%, 90%)`],
+        [7, `hsla(${Color.hueBorderCasing}, 30%, 90%, .33)`],
       ],
     },
     "line-width": {

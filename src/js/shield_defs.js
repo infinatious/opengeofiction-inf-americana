@@ -934,6 +934,18 @@ export function loadShields() {
     },
   };
 
+  //Alormen
+  shields["FSA:AL"] = {
+    spriteBlank: "shield_fsa_al",
+    textColor: Color.shields.black,
+    padding: {
+      left: 5,
+      right: 2,
+      top: 2,
+      bottom: 2,
+    },
+  };
+
   // Other states as circles for now
   shields["FSA:CL"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:RP"] = pillShield(Color.shields.white, Color.shields.black);
@@ -944,7 +956,6 @@ export function loadShields() {
   shields["FSA:TN"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WI"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WM"] = pillShield(Color.shields.white, Color.shields.black);
-  shields["FSA:AL"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:AC"] = pillShield(Color.shields.white, Color.shields.black);
 
   // RTC

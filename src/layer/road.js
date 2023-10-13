@@ -18,7 +18,7 @@ const minZoomSmallService = 15;
 const roadExp = 1.2;
 
 const roadHue = 34;
-const tollRoadHue = 50;
+const tollRoadHue = 14;
 const buswayHue = 322;
 
 //Tunnel casing dash pattern
@@ -372,6 +372,24 @@ function roadFillColor(hue, minZoom, transitionZoom) {
   ];
 }
 
+function primaryFillColor(hue, minZoom, transitionZoom) {
+  let transitionStop = transitionZoom
+    ? [transitionZoom, `hsl(${hue}, 8%, 23%)`]
+    : [];
+  return [
+    "interpolate",
+    ["exponential", roadExp],
+    ["zoom"],
+    minZoom,
+    `hsl(${hue}, 0%, 75%)`,
+    ...transitionStop,
+    14.9999,
+    `hsl(${hue}, 0%, 23%)`,
+    15,
+    `hsl(${hue}, 100%, 100%)`,
+  ];
+}
+
 function tollRoadFillColor(hue, minZoom, transitionZoom) {
   let transitionStop = transitionZoom
     ? [transitionZoom, `hsl(${hue}, 100%, 40%)`]
@@ -635,7 +653,7 @@ class Motorway extends Road {
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 98%, 78%)`,
-        `hsl(${roadHue}, 100%, 77%)`,
+        `hsl(${roadHue}, 100%, 75%)`,
       ],
     ];
     this.casingColor = [
@@ -645,26 +663,26 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 10%, 85%)`,
-        `hsl(${roadHue}, 10%, 85%)`,
+        `hsl(${tollRoadHue}, 40%, 85%)`,
+        `hsl(${roadHue}, 40%, 85%)`,
       ],
       6,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 60%, 50%)`,
-        `hsl(${roadHue}, 60%, 50%)`,
+        `hsl(${tollRoadHue}, 60%, 70%)`,
+        `hsl(${roadHue}, 60%, 70%)`,
       ],
       minzoomBrunnel - 0.5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 71%, 40%)`,
-        `hsl(${roadHue}, 71%, 40%)`,
+        `hsl(${tollRoadHue}, 71%, 80%)`,
+        `hsl(${roadHue}, 71%, 80%)`,
       ],
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 51%, 9%)`,
-        `hsl(${roadHue}, 51%, 9%)`,
+        `hsl(${tollRoadHue}, 51%, 69%)`,
+        `hsl(${roadHue}, 59%, 69%)`,
       ],
     ];
   }
@@ -691,20 +709,20 @@ class Trunk extends Road {
       5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 57%, 90%)`,
-        `hsl(${roadHue}, 57%, 90%)`,
+        `hsl(${tollRoadHue}, 67%, 90%)`,
+        `hsl(${roadHue}, 67%, 90%)`,
       ],
       9,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 57%, 87%)`,
-        `hsl(${roadHue}, 57%, 87%)`,
+        `hsl(${tollRoadHue}, 67%, 87%)`,
+        `hsl(${roadHue}, 67%, 87%)`,
       ],
       15,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 55%, 18%)`,
-        `hsl(${roadHue}, 55%, 18%)`,
+        `hsl(${tollRoadHue}, 67%, 69%)`,
+        `hsl(${roadHue}, 67%, 69%)`,
       ],
     ];
   }
@@ -724,10 +742,10 @@ class Primary extends Road {
     this.minZoomFill = minZoomPrimary;
     this.minZoomCasing = minZoomPrimary;
 
-    this.fillColor = roadFillColor(
-      roadHue,
+    this.fillColor = primaryFillColor(
+      48,
       this.minZoomFill,
-      this.minZoomFill + 2
+      this.minZoomFill + 3
     );
   }
 }
@@ -1343,3 +1361,88 @@ export const legendEntries = [
     filter: isUnpaved,
   },
 ];
+
+export const path = {
+  "id": "highway-path",
+  "type": "line",
+  "metadata": {
+    "mapbox:group": "1444849345966.4436"
+  },
+  "source": "openmaptiles",
+  "source-layer": "transportation",
+  "filter": [
+    "all",
+    ["==", "$type", "LineString"],
+    [
+      "all",
+      [
+        "!in",
+        "brunnel",
+        "bridge",
+        "tunnel"
+      ],
+      ["==", "class", "path"]
+    ]
+  ],
+  "paint": {
+    "line-color": "rgba(231, 136, 164, 1)",
+    "line-dasharray": [1.5, 0.75],
+    "line-width": {
+      "base": 1.2,
+      "stops": [[15, 1.2], [20, 4]]
+    }
+  }
+}
+
+export const bridgePath = {
+  "id": "bridge-path",
+  "type": "line",
+  "metadata": {
+    "mapbox:group": "1444849334699.1902"
+  },
+  "source": "openmaptiles",
+  "source-layer": "transportation",
+  "filter": [
+    "all",
+    ["==", "$type", "LineString"],
+    [
+      "all",
+      ["==", "brunnel", "bridge"],
+      ["==", "class", "path"]
+    ]
+  ],
+  "paint": {
+    "line-color": "#cba",
+    "line-dasharray": [1.5, 0.75],
+    "line-width": {
+      "base": 1.2,
+      "stops": [[15, 1.2], [20, 4]]
+    }
+  }
+}
+
+export const bridgePathCasing = {
+  "id": "bridge-path-casing",
+  "type": "line",
+  "metadata": {
+    "mapbox:group": "1444849334699.1902"
+  },
+  "source": "openmaptiles",
+  "source-layer": "transportation",
+  "filter": [
+    "all",
+    ["==", "$type", "LineString"],
+    [
+      "all",
+      ["==", "brunnel", "bridge"],
+      ["==", "class", "path"]
+    ]
+  ],
+  "paint": {
+    "line-color": "#f8f4f0",
+    "line-width": {
+      "base": 1.2,
+      "stops": [[15, 1.2], [20, 18]]
+    }
+  }
+}
