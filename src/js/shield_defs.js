@@ -950,9 +950,9 @@ export function loadShields() {
     spriteBlank: "shield_fsa_cl",
     textColor: Color.shields.black,
     padding: {
-      left: 2,
-      right: 2,
-      top: 3,
+      left: 1,
+      right: 1,
+      top: 2,
       bottom: 2,
     },
   };
@@ -1003,12 +1003,36 @@ export function loadShields() {
     },
   };
 
+  //Michisaukee
+  shields["FSA:MC"] = {
+    spriteBlank: "shield_fsa_mc",
+    textColor: Color.shields.black,
+    padding: {
+      left: 3,
+      right: 3,
+      top: 4,
+      bottom: 3,
+    },
+  };
+
+  //Wisecota
+  shields["FSA:WI"] = {
+    spriteBlank: "shield_fsa_wi",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.black,
+    padding: {
+      left: 3,
+      right: 3,
+      top: 5,
+      bottom: 3,
+    },
+  };
+
   // Other states as circles for now
   shields["FSA:Z"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WA"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:TA"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:TN"] = pillShield(Color.shields.white, Color.shields.black);
-  shields["FSA:WI"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:AC"] = pillShield(Color.shields.white, Color.shields.black);
 
   // RTC

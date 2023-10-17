@@ -65,6 +65,8 @@ let networks = [
   "FSA:RP",
   "FSA:MK",
   "FSA:WM",
+  "FSA:MC",
+  "FSA:WI",
   "FSA:AC",
   // With banners
 ];
