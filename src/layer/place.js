@@ -265,16 +265,16 @@ export const countryOther = {
     ["!", ["has", "iso_a2"]],
   ],
   layout: {
-    "text-font": ["Americana-Regular"],
+    "text-font": ["Americana-Bold"],
     "text-size": {
       stops: [
-        [3, 9],
-        [7, 15],
+        [3, 13],
+        [7, 17],
       ],
     },
     "text-field": Label.localizedName,
     "text-max-width": 6.25,
-    "text-transform": "none",
+    "text-transform": "uppercase",
   },
   source: "openmaptiles",
   "source-layer": "place",

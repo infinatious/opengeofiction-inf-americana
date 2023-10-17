@@ -635,13 +635,13 @@ class Motorway extends Road {
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 90%, 84%)`,
-        `hsl(${roadHue}, 90%, 84%)`,
+        `hsl(${roadHue}, 95%, 69%)`,
       ],
       6,
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 90%, 81%)`,
-        `hsl(${roadHue}, 90%, 81%)`,
+        `hsl(${roadHue}, 95%, 71%)`,
       ],
       minzoomBrunnel - 0.5,
       [

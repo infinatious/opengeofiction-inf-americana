@@ -909,7 +909,6 @@ export function loadShields() {
     24
   );
 
-
   // Mennowa
   shields["FSA:ME"] = {
     spriteBlank: "shield_fsa_me",
@@ -946,16 +945,70 @@ export function loadShields() {
     },
   };
 
+  //Clamash
+  shields["FSA:CL"] = {
+    spriteBlank: "shield_fsa_cl",
+    textColor: Color.shields.black,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 3,
+      bottom: 2,
+    },
+  };
+
+  //Riopoderos
+  shields["FSA:RP"] = {
+    spriteBlank: "shield_fsa_rp",
+    textColor: Color.shields.black,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 3,
+      bottom: 2,
+    },
+  };
+  shields["FSA:RS"] = {
+    spriteBlank: "shield_fsa_rp",
+    textColor: Color.shields.black,
+    padding: {
+      left: 2,
+      right: 2,
+      top: 3,
+      bottom: 2,
+    },
+  };
+
+  //W Massodeya
+  shields["FSA:WM"] = {
+    spriteBlank: "shield_fsa_wm",
+    textColor: Color.shields.black,
+    padding: {
+      left: 5,
+      right: 2,
+      top: 2,
+      bottom: 4,
+    },
+  };
+
+  //Makaska
+  shields["FSA:MK"] = {
+    spriteBlank: "shield_fsa_mk",
+    textColor: Color.shields.black,
+    padding: {
+      left: 4,
+      right: 4,
+      top: 5,
+      bottom: 4,
+    },
+  };
+
   // Other states as circles for now
-  shields["FSA:CL"] = pillShield(Color.shields.white, Color.shields.black);
-  shields["FSA:RP"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:Z"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WA"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:TA"] = pillShield(Color.shields.white, Color.shields.black);
-  shields["FSA:CL"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:TN"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WI"] = pillShield(Color.shields.white, Color.shields.black);
-  shields["FSA:WM"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:AC"] = pillShield(Color.shields.white, Color.shields.black);
 
   // RTC
