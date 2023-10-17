@@ -59,8 +59,8 @@ export const map = (window.map = new maplibregl.Map({
   hash: "map",
   antialias: true,
   style: buildStyle(),
-  center: [126.101, -0.299], // starting position [lng, lat]
-  zoom: 7, // starting zoom
+  center: [-37.49, 150.37], // starting position [lng, lat]
+  zoom: 4, // starting zoom
   attributionControl: false,
 }));
 

@@ -56,6 +56,12 @@ let networks = [
   "Lutang:E",
   "Lutang:KT",
   "FSA:FS",
+  "FSA:TM",
+  "FSA:S",
+  "FSA:AW",
+  "FSA:AL",
+  "FSA:ME",
+  "FSA:CL",
   // With banners
 ];
 
