@@ -11,7 +11,7 @@ Go to Account->Keys and create a key to paste here:
 */
 //const MAPTILER_KEY = "<your MapTiler key>";
 
-const OPENMAPTILES_URL = `https://ogfvector-test.infinatio.us/data/openmaptiles.json`
+const OPENMAPTILES_URL = `https://ogfvector.infinatio.us/data/openmaptiles.json`
 const ATTRIBUTION_LOGO = `
 <a href="https://opengeofiction.net">
   <img src="https://opengeofiction.net/assets/osm_logo-d621af7a73a07ad6abb9617a9ab397682b788b9d90221afa998a0f1744b7295a.svg"

@@ -950,8 +950,8 @@ export function loadShields() {
     spriteBlank: "shield_fsa_cl",
     textColor: Color.shields.black,
     padding: {
-      left: 1,
-      right: 1,
+      left: 3,
+      right: 3,
       top: 2,
       bottom: 2,
     },
@@ -962,9 +962,9 @@ export function loadShields() {
     spriteBlank: "shield_fsa_rp",
     textColor: Color.shields.black,
     padding: {
-      left: 2,
-      right: 2,
-      top: 3,
+      left: 3,
+      right: 3,
+      top: 4,
       bottom: 2,
     },
   };
@@ -972,9 +972,9 @@ export function loadShields() {
     spriteBlank: "shield_fsa_rp",
     textColor: Color.shields.black,
     padding: {
-      left: 2,
-      right: 2,
-      top: 3,
+      left: 3,
+      right: 3,
+      top: 4,
       bottom: 2,
     },
   };
@@ -986,8 +986,8 @@ export function loadShields() {
     padding: {
       left: 5,
       right: 2,
-      top: 2,
-      bottom: 4,
+      top: 1,
+      bottom: 5,
     },
   };
 
@@ -1010,7 +1010,7 @@ export function loadShields() {
     padding: {
       left: 3,
       right: 3,
-      top: 4,
+      top: 5,
       bottom: 3,
     },
   };
