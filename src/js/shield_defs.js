@@ -1048,7 +1048,8 @@ export function loadShields() {
       bannerTextHaloColor: Color.backgroundFill,
       bannerHeight: 9,
       bannerPadding: 1,
-      shieldFont: '"sans-serif-condensed", "Arial Narrow", sans-serif',
+      shieldFont:
+      '"Noto Sans Condensed", "Noto Sans Armenian Condensed", "sans-serif-condensed", "Arial Narrow", sans-serif',
       shieldSize: 20,
     },
   };
