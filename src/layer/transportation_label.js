@@ -40,7 +40,7 @@ export const label = {
       ...classSelector,
       "ferry",
       Color.waterFill,
-      Color.backgroundFill,
+      "rgba(255, 255, 255, 0.5)",
     ],
     "text-halo-blur": 0.5,
     "text-halo-width": 2,

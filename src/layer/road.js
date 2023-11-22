@@ -220,8 +220,10 @@ const roadFillWidth = [
     [...classSelector, "motorway", 3.2, [...expresswaySelector, 3.5, 4]],
     widthFactor,
   ],
+  17,
+  ["*", [...expresswaySelector, 15, 15], widthFactor],
   20,
-  ["*", [...expresswaySelector, 16, 18], widthFactor],
+  ["*", [...expresswaySelector, 60, 60], widthFactor],
 ];
 
 const roadCasingWidth = [
@@ -239,8 +241,10 @@ const roadCasingWidth = [
     [...classSelector, "motorway", 7, [...expresswaySelector, 7, 5]],
     widthFactor,
   ],
+  17,
+  ["*", [...expresswaySelector, 22, 22], widthFactor],
   20,
-  ["*", [...expresswaySelector, 25, 22], widthFactor],
+  ["*", [...expresswaySelector, 80, 80], widthFactor],
 ];
 
 const roadCasingColorTunnel = [
@@ -282,12 +286,12 @@ const roadCasingColor = [
   ["zoom"],
   [
     ...roadCasingColorTunnel,
-    [...roadCasingColorTrunkExpressway, `hsl(0, 0%, 90%)`],
+    [...roadCasingColorTrunkExpressway, `hsl(${roadHue}, 0%, 90%)`],
   ],
   15,
   [
     ...roadCasingColorTunnel,
-    [...roadCasingColorTrunkExpressway, `hsl(0, 0%, 23%)`],
+    [...roadCasingColorTrunkExpressway, `hsl(${roadHue}, 36%, 40%)`],
   ],
 ];
 
@@ -632,14 +636,14 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 50%, 56%)`,
-        `hsl(${roadHue}, 30%, 76%)`,
+        `hsl(${tollRoadHue}, 23%, 65%)`,
+        `hsl(${roadHue}, 18%, 66%)`,
       ],
       6,
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 50%, 56%)`,
-        `hsl(${roadHue}, 30%, 66%)`,
+        `hsl(${roadHue}, 18%, 66%)`,
       ],
       minzoomBrunnel - 0.5,
       [
@@ -662,13 +666,13 @@ class Motorway extends Road {
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 10%, 85%)`,
-        `hsl(${roadHue}, 10%, 85%)`,
+        `hsl(${roadHue}, 18%, 66%)`,
       ],
       6,
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 60%, 72%)`,
-        `hsl(${roadHue}, 60%, 72%)`,
+        `hsl(${roadHue}, 18%, 66%)`,
       ],
       minzoomBrunnel - 0.5,
       [
@@ -680,7 +684,7 @@ class Motorway extends Road {
       [
         ...tollSelector,
         `hsl(${tollRoadHue}, 51%, 23%)`,
-        `hsl(${roadHue}, 51%, 26%)`,
+        `hsl(${roadHue}, 51%, 46%)`,
       ],
     ];
   }
@@ -707,20 +711,20 @@ class Trunk extends Road {
       5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 77%, 50%)`,
-        `hsl(${roadHue}, 77%, 50%)`,
+        `hsl(${tollRoadHue}, 52%, 40%)`,
+        `hsl(${roadHue}, 52%, 40%)`,
       ],
       9,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 77%, 50%)`,
-        `hsl(${roadHue}, 77%, 50%)`,
+        `hsl(${tollRoadHue}, 52%, 40%)`,
+        `hsl(${roadHue}, 52%, 40%)`,
       ],
       15,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 70%, 18%)`,
-        `hsl(${roadHue}, 70%, 18%)`,
+        `hsl(${tollRoadHue}, 52%, 40%)`,
+        `hsl(${roadHue}, 52%, 40%)`,
       ],
     ];
   }
@@ -777,7 +781,6 @@ class PrimaryExpressway extends Primary {
       isExpressway,
     ];
 
-    this.fillColor = highwayFillColor;
     this.casingColor = expresswayCasingColor(
       this.minZoomCasing,
       this.minZoomCasing + 2
