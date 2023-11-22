@@ -1028,6 +1028,18 @@ export function loadShields() {
     },
   };
 
+  //Penquisset
+  shields["FSA:PQ"] = {
+    spriteBlank: "shield_fsa_pq",
+    textLayout: textConstraint("ellipse"),
+    textColor: Color.shields.black,
+    padding: {
+      left: 5,
+      right: 5,
+      top: 5,
+      bottom: 3,
+    },
+  };
   // Other states as circles for now
   shields["FSA:Z"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:WA"] = pillShield(Color.shields.white, Color.shields.black);

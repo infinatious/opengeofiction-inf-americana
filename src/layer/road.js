@@ -17,9 +17,19 @@ const minZoomSmallService = 15;
 //Exponent base for inter-zoom interpolation
 const roadExp = 1.2;
 
-const roadHue = 34;
-const tollRoadHue = 14;
+const roadHue = 216;
+const tollRoadHue = 216;
 const buswayHue = 322;
+
+const hwySat = '';
+const hwyLht = '';
+const hwyLhtCasing = '';
+
+const tnkSat = '';
+const tnkLht = '';
+const tnkLhtCasing = '';
+
+
 
 //Tunnel casing dash pattern
 const tunDashArray = [
@@ -226,11 +236,11 @@ const roadCasingWidth = [
   12,
   [
     "*",
-    [...classSelector, "motorway", 5, [...expresswaySelector, 7, 5]],
+    [...classSelector, "motorway", 7, [...expresswaySelector, 7, 5]],
     widthFactor,
   ],
   20,
-  ["*", [...expresswaySelector, 28, 22], widthFactor],
+  ["*", [...expresswaySelector, 25, 22], widthFactor],
 ];
 
 const roadCasingColorTunnel = [
@@ -255,13 +265,15 @@ const roadCasingColorTunnel = [
   ],
 ];
 
+//expressway outline here
+
 const roadCasingColorTrunkExpressway = [
   ...classSelector,
   "trunk",
   [
     ...tollSelector,
-    `hsl(${tollRoadHue}, 77%, 50%)`,
-    `hsl(${roadHue}, 77%, 50%)`,
+    `hsl(${tollRoadHue}, 25%, 50%)`,
+    `hsl(${roadHue}, 25%, 50%)`,
   ],
 ];
 
@@ -307,6 +319,8 @@ const roadFillColorTunnel = [
   ],
 ];
 
+//TRUNK FILL here
+
 const highwayFillColor = [
   ...roadFillColorTunnel,
   [
@@ -316,19 +330,19 @@ const highwayFillColor = [
       ...expresswaySelector,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 95%, 95%)`,
-        `hsl(${roadHue}, 95%, 95%)`,
+        `hsl(${tollRoadHue}, 45%, 95%)`,
+        `hsl(${roadHue}, 45%, 95%)`,
       ],
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 73%, 81%)`,
-        `hsl(${roadHue}, 100%, 83%)`,
+        `hsl(${tollRoadHue}, 23%, 69%)`,
+        `hsl(${roadHue}, 23%, 69%)`,
       ],
     ],
     [
       ...tollSelector,
-      `hsl(${tollRoadHue}, 100%, 75%)`,
-      `hsl(${roadHue}, 100%, 100%)`,
+      `hsl(${tollRoadHue}, 23%, 69%)`,
+      `hsl(${roadHue}, 23%, 69%)`,
     ],
   ],
 ];
@@ -339,13 +353,13 @@ const roadSurfaceColor = [
   [
     ...tollSelector,
     `hsl(${tollRoadHue}, 50%, 70%)`,
-    `hsl(${roadHue}, 95%, 80%)`,
+    `hsl(${roadHue}, 50%, 70%)`,
   ],
   "trunk",
   [
     ...tollSelector,
     `hsl(${tollRoadHue}, 95%, 80%)`,
-    `hsl(${roadHue}, 50%, 70%)`,
+    `hsl(${roadHue}, 95%, 80%)`,
   ],
   [
     ...tollSelector,
@@ -354,39 +368,23 @@ const roadSurfaceColor = [
   ],
 ];
 
+//regular road fills here
+
 function roadFillColor(hue, minZoom, transitionZoom) {
   let transitionStop = transitionZoom
-    ? [transitionZoom, `hsl(${hue}, 0%, 23%)`]
+    ? [transitionZoom, `hsl(${hue}, 23%, 75%)`]
     : [];
   return [
     "interpolate",
     ["exponential", roadExp],
     ["zoom"],
     minZoom,
-    `hsl(${hue}, 0%, 75%)`,
+    `hsl(${hue}, 23%, 75%)`,
     ...transitionStop,
     14.9999,
-    `hsl(${hue}, 0%, 23%)`,
+    `hsl(${hue}, 23%, 75%)`,
     15,
-    `hsl(${hue}, 100%, 100%)`,
-  ];
-}
-
-function primaryFillColor(hue, minZoom, transitionZoom) {
-  let transitionStop = transitionZoom
-    ? [transitionZoom, `hsl(${hue}, 8%, 23%)`]
-    : [];
-  return [
-    "interpolate",
-    ["exponential", roadExp],
-    ["zoom"],
-    minZoom,
-    `hsl(${hue}, 0%, 75%)`,
-    ...transitionStop,
-    14.9999,
-    `hsl(${hue}, 0%, 23%)`,
-    15,
-    `hsl(${hue}, 100%, 100%)`,
+    `hsl(${hue}, 22%, 80%)`,
   ];
 }
 
@@ -618,7 +616,7 @@ class RoadTunnel extends Road {
   }
 }
 
-//Highway class styles
+//Highway class styles MOTORWAY styles here
 class Motorway extends Road {
   constructor() {
     super();
@@ -634,26 +632,26 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 90%, 84%)`,
-        `hsl(${roadHue}, 95%, 69%)`,
+        `hsl(${tollRoadHue}, 50%, 56%)`,
+        `hsl(${roadHue}, 30%, 76%)`,
       ],
       6,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 90%, 81%)`,
-        `hsl(${roadHue}, 95%, 71%)`,
+        `hsl(${tollRoadHue}, 50%, 56%)`,
+        `hsl(${roadHue}, 30%, 66%)`,
       ],
       minzoomBrunnel - 0.5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 92%, 79%)`,
-        `hsl(${roadHue}, 92%, 79%)`,
+        `hsl(${tollRoadHue}, 50%, 58%)`,
+        `hsl(${roadHue}, 30%, 68%)`,
       ],
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 98%, 78%)`,
-        `hsl(${roadHue}, 100%, 75%)`,
+        `hsl(${tollRoadHue}, 50%, 55%)`,
+        `hsl(${roadHue}, 30%, 65%)`,
       ],
     ];
     this.casingColor = [
@@ -663,26 +661,26 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 40%, 85%)`,
-        `hsl(${roadHue}, 40%, 85%)`,
+        `hsl(${tollRoadHue}, 10%, 85%)`,
+        `hsl(${roadHue}, 10%, 85%)`,
       ],
       6,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 60%, 70%)`,
-        `hsl(${roadHue}, 60%, 70%)`,
+        `hsl(${tollRoadHue}, 60%, 72%)`,
+        `hsl(${roadHue}, 60%, 72%)`,
       ],
       minzoomBrunnel - 0.5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 71%, 80%)`,
-        `hsl(${roadHue}, 71%, 80%)`,
+        `hsl(${tollRoadHue}, 54, 63%)`,
+        `hsl(${roadHue}, 54%, 63%)`,
       ],
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 51%, 69%)`,
-        `hsl(${roadHue}, 59%, 69%)`,
+        `hsl(${tollRoadHue}, 51%, 23%)`,
+        `hsl(${roadHue}, 51%, 26%)`,
       ],
     ];
   }
@@ -709,20 +707,20 @@ class Trunk extends Road {
       5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 67%, 90%)`,
-        `hsl(${roadHue}, 67%, 90%)`,
+        `hsl(${tollRoadHue}, 77%, 50%)`,
+        `hsl(${roadHue}, 77%, 50%)`,
       ],
       9,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 67%, 87%)`,
-        `hsl(${roadHue}, 67%, 87%)`,
+        `hsl(${tollRoadHue}, 77%, 50%)`,
+        `hsl(${roadHue}, 77%, 50%)`,
       ],
       15,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 67%, 69%)`,
-        `hsl(${roadHue}, 67%, 69%)`,
+        `hsl(${tollRoadHue}, 70%, 18%)`,
+        `hsl(${roadHue}, 70%, 18%)`,
       ],
     ];
   }
@@ -742,10 +740,10 @@ class Primary extends Road {
     this.minZoomFill = minZoomPrimary;
     this.minZoomCasing = minZoomPrimary;
 
-    this.fillColor = primaryFillColor(
-      48,
+    this.fillColor = roadFillColor(
+      roadHue,
       this.minZoomFill,
-      this.minZoomFill + 3
+      this.minZoomFill + 2
     );
   }
 }

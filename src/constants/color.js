@@ -1,7 +1,7 @@
-export const backgroundFill = `hsl(30, 44%, 96%)`;
-export const backgroundFillTranslucent = `hsla(30, 44%, 96%, 0.8)`;
+export const backgroundFill = `hsl(30, 10%, 96%)`;
+export const backgroundFillTranslucent = `hsla(30, 10%, 96%, 0.8)`;
 
-export const waterFill = "hsl(195, 85%, 76%)";
+export const waterFill = "hsl(191, 72%, 77%)";
 export const waterFillTranslucent = "hsla(194, 68%, 70%, 0.5)";
 export const waterIntermittentFill = "hsla(194, 68%, 70%, 0.3)";
 export const waterIntermittentOutline = "hsl(211, 100%, 30%)";
@@ -15,7 +15,7 @@ export const hueBorderCasing = 281;
 export const border = "hsl(0, 2%, 47%)";
 export const borderCasing = `hsl(${hueBorderCasing}, 35%, 86%)`;
 
-export const parkFill = "hsl(94, 51%, 81%)";
+export const parkFill = "hsl(143, 62%, 85%)";
 export const parkOutline = "hsla(136, 41%, 70%, 50%)";
 export const parkLabel = "hsl(136, 71%, 29%)";
 export const parkLabelHalo = "hsl(90, 27%, 94%)";
@@ -69,9 +69,9 @@ export const lightRailFill = "hsl(0, 0%, 50%)";
 export const tramFill = "hsl(0, 0%, 60%)";
 export const monorailFill = "hsl(0, 0%, 50%)";
 export const funicularFill = "hsl(0, 0%, 50%)";
-export const sandFill = "hsl(44, 55%, 90%)";
-export const grassFill = "hsl(91, 60%, 84%)";
-export const woodFill = "hsl(95, 53%, 78%)";
+export const sandFill = "hsl(42, 46%, 93%)";
+export const grassFill = "hsl(151, 60%, 81%)";
+export const woodFill = "hsl(151, 60%, 78%)";
 
 export const hue = {
   tollRoad: 48,

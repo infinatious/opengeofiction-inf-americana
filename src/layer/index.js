@@ -153,7 +153,7 @@ export function build(locales) {
     lyrAerialway.dragLift
   );
 
-  layers.push(lyrBuilding.building);
+
 
   var bridgeLayers = [
     lyrRail.bridgeCasing,
@@ -212,6 +212,8 @@ export function build(locales) {
 
   layers.push(...lyrRail.getLayerSeparatedBridgeLayers(bridgeLayers));
 
+  layers.push(lyrBuilding.building);
+
   layers.push(
     //The labels at the end of the list draw on top of the layers at the beginning.
     lyrAerialway.liftCasing,
@@ -223,6 +225,7 @@ export function build(locales) {
 
     lyrTransportationLabel.bridgeSpacer,
     lyrTransportationLabel.label,
+    lyrTransportationLabel.pathlabel,
 
     lyrPark.label,
     lyrPark.parkLabel,
