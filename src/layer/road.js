@@ -282,7 +282,7 @@ const roadCasingColorTrunkExpressway = [
   [
     ...tollSelector,
     `hsl(${tollRoadHue}, 25%, 50%)`,
-    `hsl(${roadHue}, 25%, 50%)`,
+    `hsl(${roadHue}, 33%, 57%)`,
   ],
 ];
 
@@ -339,8 +339,8 @@ const highwayFillColor = [
       ...expresswaySelector,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 45%, 95%)`,
-        `hsl(${roadHue}, 45%, 95%)`,
+        `hsl(${tollRoadHue}, 45%, 69%)`,
+        `hsl(${roadHue}, 30%, 69%)`,
       ],
       [
         ...tollSelector,
