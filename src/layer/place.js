@@ -466,7 +466,8 @@ export const placeOther = {
     "town",
     "village",
     "country",
-    "continent"
+    "continent",
+    "state"
   ],
   "layout": {
     "text-field": Label.localizedName,
@@ -481,7 +482,7 @@ export const placeOther = {
     "visibility": "visible"
   },
   "paint": {
-    "text-color": "#633",
+    "text-color": "#334",
     "text-halo-color": "rgba(255,255,255,0.8)",
     "text-halo-width": 1.2
   }

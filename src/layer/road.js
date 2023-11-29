@@ -296,7 +296,7 @@ const roadCasingColor = [
   15,
   [
     ...roadCasingColorTunnel,
-    [...roadCasingColorTrunkExpressway, `hsl(${roadHue}, 20%, 76%)`],
+    [...roadCasingColorTrunkExpressway, `hsl(${roadHue}, 32%, 62%)`],
   ],
 ];
 
@@ -756,21 +756,15 @@ class Primary extends Road {
       ["zoom"],
       5,
       [
-        ...tollSelector,
-        `hsl(${tollRoadHue}, 52%, 40%)`,
         `hsl(${roadHue}, 52%, 40%)`,
       ],
       9,
       [
-        ...tollSelector,
-        `hsl(${tollRoadHue}, 52%, 40%)`,
         `hsl(${roadHue}, 52%, 40%)`,
       ],
       15,
       [
-        ...tollSelector,
-        `hsl(${tollRoadHue}, 32%, 60%)`,
-        `hsl(${roadHue}, 32%, 60%)`,
+        `hsl(${roadHue}, 32%, 62%)`,
       ],
     ];
   }
