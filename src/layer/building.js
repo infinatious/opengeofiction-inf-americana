@@ -9,12 +9,16 @@ export const building = {
       ["linear"],
       ["zoom"],
       13,
-      `hsl(0, 0%, 87%)`,
+      `hsl(210, 7%, 87%)`,
       16,
-      `hsl(0, 0%, 80%)`,
+      `hsl(210, 7%, 80%)`,
     ],
     "fill-extrusion-height": {
       "property": "render_height",
+      "type": "identity"
+    },
+    "fill-extrusion-base": {
+      "property": "render_min_height",
       "type": "identity"
     },
     "fill-extrusion-opacity": 0.95,

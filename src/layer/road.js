@@ -145,6 +145,7 @@ function filterRoad(brunnel, constraints) {
         "bus_guideway",
         "minor",
         "service",
+        "track",
       ],
     ],
   ];
@@ -204,7 +205,7 @@ const widthFactor = [
   [...linkSelector, 0.25, 0.5],
   "minor",
   0.3,
-  "service",
+  ["service", "track"],
   [...smallServiceSelector, 0.15, 0.2],
   0.2,
 ];
@@ -221,9 +222,11 @@ const roadFillWidth = [
     widthFactor,
   ],
   17,
-  ["*", [...expresswaySelector, 15, 15], widthFactor],
+  ["*", [...expresswaySelector, 17, 17], widthFactor],
   20,
-  ["*", [...expresswaySelector, 60, 60], widthFactor],
+  ["*", [...expresswaySelector, 68, 68], widthFactor],
+  22,
+  ["*", [...expresswaySelector, 180, 180], widthFactor],
 ];
 
 const roadCasingWidth = [
@@ -242,9 +245,11 @@ const roadCasingWidth = [
     widthFactor,
   ],
   17,
-  ["*", [...expresswaySelector, 22, 22], widthFactor],
+  ["*", [...expresswaySelector, 20, 20], widthFactor],
   20,
   ["*", [...expresswaySelector, 80, 80], widthFactor],
+  22,
+  ["*", [...expresswaySelector, 200, 200], widthFactor],
 ];
 
 const roadCasingColorTunnel = [
@@ -291,7 +296,7 @@ const roadCasingColor = [
   15,
   [
     ...roadCasingColorTunnel,
-    [...roadCasingColorTrunkExpressway, `hsl(${roadHue}, 36%, 40%)`],
+    [...roadCasingColorTrunkExpressway, `hsl(${roadHue}, 20%, 76%)`],
   ],
 ];
 
@@ -418,7 +423,7 @@ function expresswayCasingColor(minZoom, transitionZoom) {
     minZoom,
     `hsl(0, 0%, 75%)`,
     transitionZoom,
-    `hsl(0, 0%, 23%)`,
+    `hsl(${roadHue}, 32%, 57%)`,
   ];
 }
 
@@ -636,25 +641,25 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 23%, 65%)`,
+        `hsl(${tollRoadHue}, 47%, 65%)`,
         `hsl(${roadHue}, 18%, 66%)`,
       ],
       6,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 50%, 56%)`,
+        `hsl(${tollRoadHue}, 30%, 56%)`,
         `hsl(${roadHue}, 18%, 66%)`,
       ],
       minzoomBrunnel - 0.5,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 50%, 58%)`,
+        `hsl(${tollRoadHue}, 30%, 58%)`,
         `hsl(${roadHue}, 30%, 68%)`,
       ],
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 50%, 55%)`,
+        `hsl(${tollRoadHue}, 30%, 55%)`,
         `hsl(${roadHue}, 30%, 65%)`,
       ],
     ];
@@ -665,7 +670,7 @@ class Motorway extends Road {
       4,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 10%, 85%)`,
+        `hsl(${tollRoadHue}, 47%, 66%)`,
         `hsl(${roadHue}, 18%, 66%)`,
       ],
       6,
@@ -683,8 +688,8 @@ class Motorway extends Road {
       14,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 51%, 23%)`,
-        `hsl(${roadHue}, 51%, 46%)`,
+        `hsl(${tollRoadHue}, 30%, 47%)`,
+        `hsl(${roadHue}, 32%, 55%)`,
       ],
     ];
   }
@@ -723,8 +728,8 @@ class Trunk extends Road {
       15,
       [
         ...tollSelector,
-        `hsl(${tollRoadHue}, 52%, 40%)`,
-        `hsl(${roadHue}, 52%, 40%)`,
+        `hsl(${tollRoadHue}, 32%, 60%)`,
+        `hsl(${roadHue}, 32%, 60%)`,
       ],
     ];
   }
@@ -744,11 +749,30 @@ class Primary extends Road {
     this.minZoomFill = minZoomPrimary;
     this.minZoomCasing = minZoomPrimary;
 
-    this.fillColor = roadFillColor(
-      roadHue,
-      this.minZoomFill,
-      this.minZoomFill + 2
-    );
+    this.fillColor = highwayFillColor;
+    this.casingColor = [
+      "interpolate",
+      ["exponential", roadExp],
+      ["zoom"],
+      5,
+      [
+        ...tollSelector,
+        `hsl(${tollRoadHue}, 52%, 40%)`,
+        `hsl(${roadHue}, 52%, 40%)`,
+      ],
+      9,
+      [
+        ...tollSelector,
+        `hsl(${tollRoadHue}, 52%, 40%)`,
+        `hsl(${roadHue}, 52%, 40%)`,
+      ],
+      15,
+      [
+        ...tollSelector,
+        `hsl(${tollRoadHue}, 32%, 60%)`,
+        `hsl(${roadHue}, 32%, 60%)`,
+      ],
+    ];
   }
 }
 
@@ -768,6 +792,7 @@ class PrimaryToll extends Primary {
       this.minZoomFill,
       this.minZoomFill + 2
     );
+    
   }
 }
 
@@ -940,7 +965,7 @@ class Minor extends Road {
     super();
     this.constraints = [
       "all",
-      ["in", getClass, ["literal", ["minor", "service"]]],
+      ["in", getClass, ["literal", ["minor", "service", "track"]]],
       isNotToll,
     ];
 

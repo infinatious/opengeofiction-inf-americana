@@ -54,8 +54,9 @@ export const residential = {
     "fill-color": {
       "base": 1,
       "stops": [
-        [12, "hsla(30, 19%, 90%, 0.4)"],
-        [16, "hsla(30, 19%, 90%, 0.2)"]
+        [10, "hsla(30, 10%, 99%, 1)"],
+        [12, "hsla(30, 17%, 95%, 0.97)"],
+        [16, "hsla(30, 19%, 95%, 0.95)"]
       ]
     }
   }
@@ -97,6 +98,22 @@ export const retail = {
     "layout": {"visibility": "visible"},
     "paint": {
       "fill-color": "rgba(247, 221, 240, 0.34)"
+    }
+  }
+
+  export const commercial = {
+    "id": "landuse-commercial",
+    "type": "fill",
+    "source": "openmaptiles",
+    "source-layer": "landuse",
+    "filter": [
+      "all",
+      ["==", "$type", "Polygon"],
+      ["in", "class", "commercial"]
+    ],
+    "layout": {"visibility": "visible"},
+    "paint": {
+      "fill-color": "hsla(60, 13%, 91%, 0.99)"
     }
   }
 
@@ -146,4 +163,55 @@ export const sports = {
   "fill-opacity": 0.7,
   "fill-outline-color": "rgba(6, 143, 60, 1)"
 }
+}
+
+export const quarry = {
+  "id": "landuse-quarry",
+  "type": "fill",
+  "metadata": {
+    "mapbox:group": "1444849388993.3071"
+  },
+  "source": "openmaptiles",
+  "source-layer": "landuse",
+  "filter": [
+    "all",
+    ["in", "class", "quarry"]
+  ],
+  "layout": {"visibility": "visible"},
+  "paint": {
+    "fill-color": "rgba(208, 208, 208, 1)",
+    "fill-opacity": 0.7,
+    "fill-outline-color": "rgba(130, 137, 133, 1)"
+  }
+}
+
+export const cemetery = {
+  "id": "landuse-cemetery",
+  "type": "fill",
+  "metadata": {
+    "mapbox:group": "1444849388993.3071"
+  },
+  "source": "openmaptiles",
+  "source-layer": "landuse",
+  "filter": ["==", "class", "cemetery"],
+  "paint": {
+    "fill-color": "rgba(231, 237, 215, 1)"
+  }
+}
+
+export const military = {
+  "id": "landuse-military",
+  "type": "fill",
+  "source": "openmaptiles",
+  "source-layer": "landuse",
+  "filter": [
+    "all",
+    ["in", "class", "military"]
+  ],
+  "layout": {"visibility": "visible"},
+  "paint": {
+    "fill-color": "rgba(243, 210, 203, 1)",
+    "fill-opacity": 0.4,
+    "fill-outline-color": "rgba(52, 2, 8, 1)"
+  }
 }

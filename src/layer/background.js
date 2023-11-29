@@ -9,12 +9,18 @@ import * as Color from "../constants/color.js";
 */
 
 let backgroundColor = Color.backgroundFill;
+let backgroundColorG = Color.backgroundFill2;
 
 export const base = {
   id: "background",
   type: "background",
   paint: {
-    "background-color": backgroundColor,
+    "background-color": {
+      "stops": [
+        [6.999, backgroundColor],
+        [9.75, backgroundColor]
+      ]
+    }
   },
   layout: { visibility: "visible" },
 };

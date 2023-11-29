@@ -232,7 +232,6 @@ export const country = {
     "all",
     ["==", ["get", "admin_level"], 2],
     ["==", ["get", "disputed"], 0],
-    ["==", ["get", "maritime"], 0],
   ],
   maxzoom: 24,
   layout: {
