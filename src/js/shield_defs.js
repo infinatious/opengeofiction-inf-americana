@@ -1047,6 +1047,11 @@ export function loadShields() {
   shields["FSA:TN"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:AC"] = pillShield(Color.shields.white, Color.shields.black);
   shields["FSA:HY"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:IL"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:OA"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:PM"] = pillShield(Color.shields.white, Color.shields.black);
+  shields["FSA:TI"] = pillShield(Color.shields.white, Color.shields.black);
+
 
   // RTC
   shields["FSA:RTC"] = {
