@@ -224,6 +224,8 @@ export function build(locales) {
 
   layers.push(lyrBuilding.building);
 
+  layers.push(lyrBuilding.highwayarea);
+
   layers.push(
     //The labels at the end of the list draw on top of the layers at the beginning.
     lyrAerialway.liftCasing,
